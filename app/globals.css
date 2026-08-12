@@ -414,6 +414,35 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
 }
 @keyframes portrait-arrive{from{opacity:0}to{opacity:.62}}
 
+/* The hero portraits ship with their four-side feathering baked into the PNG.
+   Keep their presentation intentionally plain so every browser draws the same pixels. */
+.portrait,
+.portrait-bride,
+.portrait-groom{
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  -webkit-filter:none!important;
+  filter:none!important;
+  overflow:visible!important;
+}
+.portrait::after{display:none!important}
+.portrait img{
+  display:block;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  -webkit-filter:none!important;
+  filter:none!important;
+}
+.portrait-groom img{transform:scale(1.05) translateY(0)!important}
+.portrait-bride img{transform:scale(.82) translateY(0)!important}
+@media (max-width:620px){
+  .portrait,
+  .invitation-shell.is-open .portrait-groom,
+  .invitation-shell.is-open .portrait-bride{opacity:.64!important}
+  .portrait-groom img{transform:scale(.96) translateY(0)!important}
+  .portrait-bride img{transform:scale(.73) translateY(0)!important}
+}
+
 /* Tall, wide iPhones (including the Pro Max class): reserve clean bands for
    the greeting, name reveal, countdown, and home-indicator-safe scroll cue. */
 @media (min-width:390px) and (max-width:620px) and (min-height:850px){
