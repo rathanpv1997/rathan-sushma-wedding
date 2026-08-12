@@ -158,7 +158,7 @@ export default function Home() {
           <img src={assetPath("/rathan-hero-feathered.png")} alt="" loading="eager" />
         </div>
         <div className="portrait portrait-bride" aria-hidden="true">
-          <img src={assetPath("/sushma-hero-proportional.png")} alt="" loading="eager" />
+          <img src={assetPath("/sushma-hero-refined.png")} alt="" loading="eager" />
         </div>
         <p className="eyebrow">Om Sri Ganeshaya Namaha</p>
         <InvitationMark />
