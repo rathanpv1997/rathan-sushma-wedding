@@ -155,10 +155,10 @@ export default function Home() {
       <section className="hero" id="home">
         <div className="hero-glow" />
         <div className="portrait portrait-groom" aria-hidden="true">
-          <img src={assetPath("/rathan-hero-centered.png")} alt="" />
+          <img src={assetPath("/rathan-hero-mobile.png")} alt="" loading="eager" />
         </div>
         <div className="portrait portrait-bride" aria-hidden="true">
-          <img src={assetPath("/sushma-hero-feathered.png")} alt="" />
+          <img src={assetPath("/sushma-hero-feathered.png")} alt="" loading="eager" />
         </div>
         <p className="eyebrow">Om Sri Ganeshaya Namaha</p>
         <InvitationMark />

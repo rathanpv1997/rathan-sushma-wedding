@@ -386,6 +386,9 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
 @media (min-width:621px){.portrait-bride img{transform:scale(.78) translateY(0)}}
 @media (max-width:620px){.portrait-bride img{transform:scale(.66) translateY(0)}}
 
+/* Use the loaded name face explicitly; avoid Safari substituting a system script font. */
+.hero h1{font-family:"Allura",cursive;font-weight:400;letter-spacing:-.015em}
+
 /* Tall, wide iPhones (including the Pro Max class): reserve clean bands for
    the greeting, name reveal, countdown, and home-indicator-safe scroll cue. */
 @media (min-width:390px) and (max-width:620px) and (min-height:850px){
