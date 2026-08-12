@@ -389,6 +389,31 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
 /* Use the loaded name face explicitly; avoid Safari substituting a system script font. */
 .hero h1{font-family:"Invitation Allura","Allura",cursive;font-weight:400;letter-spacing:-.015em}
 
+/* iOS Safari composites filtered, transformed PNG layers at low resolution.
+   The portraits already include feathered alpha edges, so keep their final
+   mobile state sharp and let the images—not a second mask/filter—do the blend. */
+@media (max-width:620px){
+  .portrait,
+  .invitation-shell.is-open .portrait-groom,
+  .invitation-shell.is-open .portrait-bride{
+    opacity:.62!important;
+    filter:none!important;
+    -webkit-filter:none!important;
+    -webkit-mask-image:none!important;
+    mask-image:none!important;
+    animation:portrait-arrive .72s ease-out both!important;
+  }
+  .portrait::after{display:none!important}
+  .portrait img{
+    display:block;
+    filter:saturate(.9) contrast(1.02)!important;
+    -webkit-filter:saturate(.9) contrast(1.02)!important;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+}
+@keyframes portrait-arrive{from{opacity:0}to{opacity:.62}}
+
 /* Tall, wide iPhones (including the Pro Max class): reserve clean bands for
    the greeting, name reveal, countdown, and home-indicator-safe scroll cue. */
 @media (min-width:390px) and (max-width:620px) and (min-height:850px){
