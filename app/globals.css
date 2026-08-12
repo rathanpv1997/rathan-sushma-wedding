@@ -479,6 +479,10 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
   object-position:center center!important;
   transform:none!important;
 }
+/* Sushma's portrait is a little wider than Rathan's source image. Scale it
+   within the shared frame and lift it slightly: this exposes the sandals and
+   pavement while bringing both faces onto the same horizontal line. */
+.portrait-bride img{transform:translateY(-62px) scale(.90)!important}
 @media (max-width:620px){
   .portrait-groom,
   .portrait-bride{
@@ -488,6 +492,7 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
   }
   .portrait-groom{left:-34px!important}
   .portrait-bride{right:-34px!important}
+  .portrait-bride img{transform:translateY(-46px) scale(.86)!important}
 }
 
 /* A warm, tactile invitation to open the seal on pointer devices. */
