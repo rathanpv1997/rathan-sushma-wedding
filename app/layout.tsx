@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
 export const dynamic = "force-static";
+
+const invitationAllura = localFont({
+  src: "../public/fonts/allura.ttf",
+  variable: "--font-invitation-allura",
+  display: "block",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rathanpv1997.github.io/rathan-sushma-wedding"),
@@ -23,14 +31,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-  const alluraPath = `${basePath}/fonts/allura.ttf`;
-
   return <html lang="en">
-    <head>
-      <link rel="preload" href={alluraPath} as="font" type="font/ttf" crossOrigin="anonymous" />
-      <style>{`@font-face{font-family:"Invitation Allura";src:url("${alluraPath}") format("truetype");font-style:normal;font-weight:400;font-display:block;}`}</style>
-    </head>
-    <body>{children}</body>
+    <body className={invitationAllura.variable}>{children}</body>
   </html>;
 }
