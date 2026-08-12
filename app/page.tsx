@@ -163,10 +163,10 @@ export default function Home() {
       <section className="hero" id="home" data-reveal-step={revealStep}>
         <div className="hero-glow" />
         <div className="portrait portrait-groom" aria-hidden="true">
-          <img src={assetPath("/rathan-hero-final.png")} alt="" loading="eager" />
+          <img src={assetPath("/rathan-hero-original.png")} alt="" loading="eager" />
         </div>
         <div className="portrait portrait-bride" aria-hidden="true">
-          <img src={assetPath("/sushma-hero-matched.png")} alt="" loading="eager" />
+          <img src={assetPath("/sushma-hero-original-cropped.png")} alt="" loading="eager" />
         </div>
         <p className="eyebrow">Om Sri Ganeshaya Namaha</p>
         <InvitationMark />
