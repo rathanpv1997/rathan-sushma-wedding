@@ -56,6 +56,7 @@ export default function Home() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [isInvitationOpening, setIsInvitationOpening] = useState(false);
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
+  const [revealStep, setRevealStep] = useState(0);
   const musicRef = useRef<HTMLAudioElement>(null);
   const openingTimerRef = useRef<number | null>(null);
 
@@ -69,6 +70,13 @@ export default function Home() {
   useEffect(() => () => {
     if (openingTimerRef.current !== null) window.clearTimeout(openingTimerRef.current);
   }, []);
+
+  useEffect(() => {
+    if (!isInvitationOpen) return;
+    const timings = [0, 440, 1040, 1500, 1930, 2540, 3190, 3740, 4210, 4740, 5220];
+    const timers = timings.map((delay, step) => window.setTimeout(() => setRevealStep(step + 1), delay));
+    return () => timers.forEach((timer) => window.clearTimeout(timer));
+  }, [isInvitationOpen]);
 
   useEffect(() => {
     setTimeLeft(getTimeLeft());
@@ -152,7 +160,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="hero" id="home">
+      <section className="hero" id="home" data-reveal-step={revealStep}>
         <div className="hero-glow" />
         <div className="portrait portrait-groom" aria-hidden="true">
           <img src={assetPath("/rathan-hero-final.png")} alt="" loading="eager" />
@@ -185,7 +193,7 @@ export default function Home() {
           <p className="eyebrow">A warm invitation</p>
           <h2 id="blessing-title">Your presence and blessings<br /><em>would mean the world to us.</em></h2>
           <div className="fancy-divider" aria-hidden="true"><span /></div>
-          <p className="family-signature"><span>Pothireddy &amp; Manyam</span><small>with joy, invite you to celebrate</small></p>
+          <p className="family-signature"><span>Pothireddy &amp; Manyam</span><small>request the pleasure of your company</small></p>
           <p className="body-copy">With joy and gratitude, we invite you to share in Rathan and Sushma&apos;s beautiful new chapter.</p>
         </div>
       </section>

@@ -539,20 +539,88 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
   .hero .countdown-note{top:calc(50% + 258px)}
 }
 
-/* Final reveal order: each name is followed by its portrait.  These rules
-   intentionally come last so Safari's sharp-image fallback cannot replace
-   the staged animation with a simultaneous fade. */
-.invitation-shell.is-open .hero h1 span:first-child{animation:hero-name-pop 1s cubic-bezier(.18,.95,.28,1.25) .95s both!important}
-.invitation-shell.is-open .portrait-groom{animation:portrait-arrive 1.05s ease-out 1.78s both!important}
-.invitation-shell.is-open .hero h1 i{animation:hero-fade .55s ease 2.58s both!important}
-.invitation-shell.is-open .hero h1 span:last-child{animation:hero-name-pop 1s cubic-bezier(.18,.95,.28,1.25) 2.9s both!important}
-.invitation-shell.is-open .portrait-bride{animation:portrait-arrive 1.05s ease-out 3.72s both!important}
-.invitation-shell.is-open .getting-married{animation:hero-fade .8s ease 4.72s both!important}
-.invitation-shell.is-open .hero-date{animation:hero-fade .65s ease 5.45s both!important}
-.invitation-shell.is-open .countdown{animation:hero-fade .75s ease 5.84s both!important}
-.invitation-shell.is-open .countdown-note{animation:hero-fade .65s ease 6.48s both!important}
-.invitation-shell.is-open .mouse-scroll{animation:hero-fade .6s ease 6.88s both!important}
-.invitation-shell.is-open .countdown-unit:nth-child(1){animation-delay:6.04s}.invitation-shell.is-open .countdown-unit:nth-child(2){animation-delay:6.16s}.invitation-shell.is-open .countdown-unit:nth-child(3){animation-delay:6.28s}.invitation-shell.is-open .countdown-unit:nth-child(4){animation-delay:6.4s}
+/* Explicit reveal stages avoid iPhone Safari promoting the portraits before
+   their intended turn in the sequence. */
+.hero[data-reveal-step]{--reveal-opacity:0}
+.hero[data-reveal-step] .hero-invite,
+.hero[data-reveal-step]>.eyebrow,
+.hero[data-reveal-step] .mark,
+.hero[data-reveal-step] h1 span,
+.hero[data-reveal-step] h1 i,
+.hero[data-reveal-step] .portrait,
+.hero[data-reveal-step] .getting-married,
+.hero[data-reveal-step] .hero-date,
+.hero[data-reveal-step] .countdown,
+.hero[data-reveal-step] .countdown-note,
+.hero[data-reveal-step] .mouse-scroll{opacity:0!important;animation:none!important}
+.hero[data-reveal-step="1"] .hero-invite,
+.hero[data-reveal-step="2"] .hero-invite,
+.hero[data-reveal-step="3"] .hero-invite,
+.hero[data-reveal-step="4"] .hero-invite,
+.hero[data-reveal-step="5"] .hero-invite,
+.hero[data-reveal-step="6"] .hero-invite,
+.hero[data-reveal-step="7"] .hero-invite,
+.hero[data-reveal-step="8"] .hero-invite,
+.hero[data-reveal-step="9"] .hero-invite,
+.hero[data-reveal-step="10"] .hero-invite,
+.hero[data-reveal-step="11"] .hero-invite,
+.hero[data-reveal-step="2"]>.eyebrow,
+.hero[data-reveal-step="3"]>.eyebrow,
+.hero[data-reveal-step="4"]>.eyebrow,
+.hero[data-reveal-step="5"]>.eyebrow,
+.hero[data-reveal-step="6"]>.eyebrow,
+.hero[data-reveal-step="7"]>.eyebrow,
+.hero[data-reveal-step="8"]>.eyebrow,
+.hero[data-reveal-step="9"]>.eyebrow,
+.hero[data-reveal-step="10"]>.eyebrow,
+.hero[data-reveal-step="11"]>.eyebrow,
+.hero[data-reveal-step="3"] .mark,
+.hero[data-reveal-step="4"] .mark,
+.hero[data-reveal-step="5"] .mark,
+.hero[data-reveal-step="6"] .mark,
+.hero[data-reveal-step="7"] .mark,
+.hero[data-reveal-step="8"] .mark,
+.hero[data-reveal-step="9"] .mark,
+.hero[data-reveal-step="10"] .mark,
+.hero[data-reveal-step="11"] .mark,
+.hero[data-reveal-step="4"] h1 span:first-child,
+.hero[data-reveal-step="5"] h1 span:first-child,
+.hero[data-reveal-step="6"] h1 span:first-child,
+.hero[data-reveal-step="7"] h1 span:first-child,
+.hero[data-reveal-step="8"] h1 span:first-child,
+.hero[data-reveal-step="9"] h1 span:first-child,
+.hero[data-reveal-step="10"] h1 span:first-child,
+.hero[data-reveal-step="11"] h1 span:first-child,
+.hero[data-reveal-step="5"] .portrait-groom,
+.hero[data-reveal-step="6"] .portrait-groom,
+.hero[data-reveal-step="7"] .portrait-groom,
+.hero[data-reveal-step="8"] .portrait-groom,
+.hero[data-reveal-step="9"] .portrait-groom,
+.hero[data-reveal-step="10"] .portrait-groom,
+.hero[data-reveal-step="11"] .portrait-groom,
+.hero[data-reveal-step="6"] h1 i,
+.hero[data-reveal-step="7"] h1 i,
+.hero[data-reveal-step="8"] h1 i,
+.hero[data-reveal-step="9"] h1 i,
+.hero[data-reveal-step="10"] h1 i,
+.hero[data-reveal-step="11"] h1 i,
+.hero[data-reveal-step="7"] h1 span:last-child,
+.hero[data-reveal-step="8"] h1 span:last-child,
+.hero[data-reveal-step="9"] h1 span:last-child,
+.hero[data-reveal-step="10"] h1 span:last-child,
+.hero[data-reveal-step="11"] h1 span:last-child,
+.hero[data-reveal-step="8"] .portrait-bride,
+.hero[data-reveal-step="9"] .portrait-bride,
+.hero[data-reveal-step="10"] .portrait-bride,
+.hero[data-reveal-step="11"] .portrait-bride,
+.hero[data-reveal-step="9"] .getting-married,
+.hero[data-reveal-step="10"] .getting-married,
+.hero[data-reveal-step="11"] .getting-married,
+.hero[data-reveal-step="10"] .hero-date,
+.hero[data-reveal-step="11"] .hero-date,
+.hero[data-reveal-step="11"] .countdown,
+.hero[data-reveal-step="11"] .countdown-note,
+.hero[data-reveal-step="11"] .mouse-scroll{opacity:1!important;transition:opacity .65s ease}
 
 /* Compact but legible countdown proportions on iPhones. */
 @media (max-width:620px){
