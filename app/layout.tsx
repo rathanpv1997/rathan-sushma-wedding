@@ -23,5 +23,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const alluraPath = `${basePath}/fonts/allura.ttf`;
+
+  return <html lang="en">
+    <head>
+      <link rel="preload" href={alluraPath} as="font" type="font/ttf" crossOrigin="anonymous" />
+      <style>{`@font-face{font-family:"Invitation Allura";src:url("${alluraPath}") format("truetype");font-style:normal;font-weight:400;font-display:block;}`}</style>
+    </head>
+    <body>{children}</body>
+  </html>;
 }

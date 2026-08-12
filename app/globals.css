@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Sacramento&display=swap');
 @import "tailwindcss";
 
 :root { --wine:#651d29; --deep:#1c382d; --gold:#b78332; --ink:#402a24; --paper:#fff9ec; --sand:#f3e5c7; }
@@ -387,7 +387,7 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
 @media (max-width:620px){.portrait-bride img{transform:scale(.66) translateY(0)}}
 
 /* Use the loaded name face explicitly; avoid Safari substituting a system script font. */
-.hero h1{font-family:"Allura",cursive;font-weight:400;letter-spacing:-.015em}
+.hero h1{font-family:"Invitation Allura","Allura",cursive;font-weight:400;letter-spacing:-.015em}
 
 /* Tall, wide iPhones (including the Pro Max class): reserve clean bands for
    the greeting, name reveal, countdown, and home-indicator-safe scroll cue. */
