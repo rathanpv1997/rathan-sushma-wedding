@@ -185,8 +185,8 @@ export default function Home() {
           <p className="eyebrow">A warm invitation</p>
           <h2 id="blessing-title">Your presence and blessings<br /><em>would mean the world to us.</em></h2>
           <div className="fancy-divider" aria-hidden="true"><span /></div>
-          <p className="family-signature"><span>Pothireddy&apos;s family</span><small>joining hands with</small><strong>Manyam&apos;s family</strong></p>
-          <p className="body-copy">With joy and gratitude, our families request the honor of your presence as Rathan and Sushma begin their beautiful new chapter.</p>
+          <p className="family-signature"><span>Pothireddy</span><small>come together in celebration</small><strong>Manyam</strong></p>
+          <p className="body-copy">With joy and gratitude, we invite you to share in Rathan and Sushma&apos;s beautiful new chapter.</p>
         </div>
       </section>
 
