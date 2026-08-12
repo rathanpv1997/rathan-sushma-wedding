@@ -434,7 +434,7 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
   filter:none!important;
 }
 .portrait-groom img{transform:scale(1.05) translateY(0)!important}
-.portrait-bride img{transform:scale(.74) translateY(0)!important}
+.portrait-bride img{transform:scale(.73) translateY(0)!important}
 @media (max-width:620px){
   .portrait,
   .invitation-shell.is-open .portrait-groom,
