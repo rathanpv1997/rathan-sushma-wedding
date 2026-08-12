@@ -459,6 +459,37 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
   .hero .mouse-scroll{bottom:max(22px,calc(env(safe-area-inset-bottom) + 14px))}
 }
 
+/* Final paired-portrait geometry: both figures share one center axis and one
+   display frame. The baked PNG transparency supplies the edge blend. */
+.portrait-groom,
+.portrait-bride{
+  top:50%!important;
+  bottom:auto!important;
+  height:clamp(510px,67svh,720px)!important;
+  width:clamp(250px,25vw,420px)!important;
+  transform:translateY(-50%)!important;
+}
+.portrait-groom{left:clamp(4vw,10vw,210px)!important}
+.portrait-bride{right:clamp(4vw,10vw,210px)!important}
+.portrait-groom img,
+.portrait-bride img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+}
+@media (max-width:620px){
+  .portrait-groom,
+  .portrait-bride{
+    width:min(47vw,245px)!important;
+    height:min(66svh,540px)!important;
+    transform:translateY(-50%)!important;
+  }
+  .portrait-groom{left:-34px!important}
+  .portrait-bride{right:-34px!important}
+}
+
 /* A warm, tactile invitation to open the seal on pointer devices. */
 @media (hover:hover){
   .open-invitation:hover,
