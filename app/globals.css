@@ -487,14 +487,14 @@ h1 { display:flex; flex-direction:column; margin:0; font-family:"Alex Brush",cur
   transform:none!important;
 }
 
-/* The hero files are unedited originals on matching canvases.  Fade only the
-   outer display frame so both portraits blend without modifying photo pixels. */
+/* Edge fade is baked into the PNG alpha channel for identical Safari and
+   desktop rendering; do not layer a browser-specific mask on top. */
 .portrait-groom,
 .portrait-bride{
-  -webkit-mask-image:radial-gradient(ellipse 74% 88% at 50% 50%,#000 42%,rgba(0,0,0,.9) 62%,rgba(0,0,0,.48) 79%,transparent 100%)!important;
-  mask-image:radial-gradient(ellipse 74% 88% at 50% 50%,#000 42%,rgba(0,0,0,.9) 62%,rgba(0,0,0,.48) 79%,transparent 100%)!important;
-  -webkit-mask-composite:source-over!important;
-  mask-composite:add!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  -webkit-mask-composite:initial!important;
+  mask-composite:initial!important;
 }
 @media (max-width:620px){
   .portrait-groom,
